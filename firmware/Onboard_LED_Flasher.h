@@ -200,28 +200,7 @@ void LED_Green_FFlash() {
         RGB.control(false);  // resume normal operation
    }
 
-        
-//  Generic Flasher
-/*
 
-        RGB.color(lred, lgreen, lblue); // yellow
-          delay(800);   // wait one second     
-        RGB.color(0, 0, 0);  // off
-          delay(300);   // wait      
-        RGB.color(255, 255, 0); // yellow
-          delay(700);   // wait      
-        RGB.color(0, 0, 0);  // off
-          delay(300);   // wait      
-        RGB.color(255, 255, 0); // yellow
-          delay(700);   // wait      
-        RGB.color(0, 0, 0);  // off
-          delay(300);   // wait      
-
-*/
-
-
-
-        
         
 //        if (timerFlag){
 //          RGB.color(0, 255, 0);   // greenw
@@ -231,9 +210,9 @@ void LED_Green_FFlash() {
 
 void LED_If_Control() {
 
-    if (overTempFlag) {LED_Red_Flash();}   
+//    if (overTempFlag) {LED_Red_Flash();}   
     
-    if (highTempFlag) {LED_Yellow_Flash();}  
+//    if (highTempFlag) {LED_Yellow_Flash();}  
 
 }
   
