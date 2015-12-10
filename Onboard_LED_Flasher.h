@@ -14,6 +14,10 @@
 //LED_Red_FFlash()  - red fast flash x3
 //LED_Yellow_Flash() - yellow flash x3
 //LED_Yellow_FFlash() - yellow fast flash x3
+//LED_Green_Flash() - green flash x3
+//LED_Green_FFlash() - green fast flash x3
+//
+//LED_If_Control()  - Criteria based logic
 //
 //LED_reset()  - green/white flash x4
 //
@@ -225,7 +229,7 @@ void LED_Green_FFlash() {
 //        }
         
 
-void LED_Control() {
+void LED_If_Control() {
 
     if (overTempFlag) {LED_Red_Flash();}   
     
