@@ -1,0 +1,8 @@
+
+{
+  "name": "Onboard_LED_Flasher",
+  "author": "BobDawgs",
+  "license": "MIT",
+  "version": "1.0.0.1",
+  "description": "Onboard LED Flasher utility for Core and Photon"
+}
