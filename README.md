@@ -1,2 +1,2 @@
 # Onboard_LED_Flasher
-Flashing utility for Photon on-board LED
+Flashing utility for Particle's on-board LED
