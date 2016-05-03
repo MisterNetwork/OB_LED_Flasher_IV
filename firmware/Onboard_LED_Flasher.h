@@ -21,7 +21,7 @@
 //
 //LED_reset()  - green/white flash x4
 //
-//LED_Rainboe_Flash()
+//LED_Rainbow_Flash()
 //
 //
 
