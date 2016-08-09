@@ -46,10 +46,10 @@ int countr;
 
 
 //---- Main Blink Control - all colors ----------
-void LED_Blinker(int count){
+void LED_Blinker(int countb){
 
   RGB.control(true);   // take control of the RGB LED
-  if (count< 1 || count >8) count=3;
+  if (countb< 1 || countb >8) countb=3;
   countr = 1;
      do
     {
@@ -58,7 +58,7 @@ void LED_Blinker(int count){
         RGB.color(0, 0, 0);  // off
           delay(400);   // wait
           countr++; 
-    } while (count >= countr);
+    } while (countb >= countr);
 
         RGB.control(false);  // resume normal operation
         }
