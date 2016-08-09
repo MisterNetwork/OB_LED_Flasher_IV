@@ -44,6 +44,25 @@ int count;
 int countr;
 
 
+
+//---- Main Blink Control - all colors ----------
+void LED_Blinker(int count){
+
+  RGB.control(true);   // take control of the RGB LED
+  if (count< 1 || count >8) count=3;
+  countr = 1;
+     do
+    {
+      RGB.color(lred, lgreen, lblue);  // on
+          delay(900);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(400);   // wait
+          countr++; 
+    } while (count >= countr);
+
+        RGB.control(false);  // resume normal operation
+        }
+
 //-----------------------  Red flash x3   -----------------------
 
 void LED_Red_Flash(int count) {
@@ -239,24 +258,6 @@ void LED_Control() {
 //        }  
 
 }
-
-void LED_Blinker(int count){
-
-  RGB.control(true);   // take control of the RGB LED
-  if (count< 1 || count >8) count=3;
-  countr = 1;
-     do
-    {
-      RGB.color(lred, lgreen, lblue);  // on
-          delay(900);   // wait      
-        RGB.color(0, 0, 0);  // off
-          delay(400);   // wait
-          countr++; 
-    } while (count >= countr);
-
-        RGB.control(false);  // resume normal operation
-        }
-
 
 
 
