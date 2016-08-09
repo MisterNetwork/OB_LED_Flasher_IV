@@ -3,9 +3,9 @@
 //    L     EEEE  DDD  
 //    L     E     D  D
 //    L     EEE   D   D
-//    L     E     D  D
-//    LLLL  EEEE  DDD    Flasher V2.0.3
-//
+//    L     E     D  D  
+//    LLLL  EEEE  DDD   Flasher II
+//                               V3.0.1
 //  -------------------------------------
 /*
 *  Particle On-Board LED controller
