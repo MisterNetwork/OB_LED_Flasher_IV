@@ -40,13 +40,11 @@
 int lred;
 int lgreen;
 int lblue;
-int count;
-int countr;
 
 
 //-----------------------  Red flash x3   -----------------------
 
-void LED_Red_Flash(int count) {
+void LED_Red_Flash() {
 
         RGB.control(true);   // take control of the RGB LED
 
@@ -54,26 +52,18 @@ void LED_Red_Flash(int count) {
         lgreen = 0;
         lblue = 0;
         
-  if (count< 1 || count >8) count=3;
-  countr = 0;
-     do
-    {
       RGB.color(lred, lgreen, lblue);  // red
           delay(900);   // wait      
         RGB.color(0, 0, 0);  // off
           delay(400);   // wait
-          countr++; 
-    } while (count >= countr);
-
-          
-//RGB.color(lred, lgreen, lblue);  // red
-//          delay(800);   // wait      
-//        RGB.color(0, 0, 0);  // off
-//          delay(400);   // wait      
-//        RGB.color(lred, lgreen, lblue);  // red
-//          delay(800);   // wait      
-//        RGB.color(0, 0, 0);  // off
-//          delay(400);   // wait      
+        RGB.color(lred, lgreen, lblue);  // red
+          delay(800);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(400);   // wait      
+        RGB.color(lred, lgreen, lblue);  // red
+          delay(800);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(400);   // wait      
 
         RGB.control(false);  // resume normal operation
         }
