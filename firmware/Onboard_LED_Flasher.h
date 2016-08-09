@@ -46,7 +46,7 @@ int countr;
 
 //-----------------------  Red flash x3   -----------------------
 
-int LED_Red_Flash(int count) {
+void LED_Red_Flash(int count) {
 
         RGB.control(true);   // take control of the RGB LED
 
