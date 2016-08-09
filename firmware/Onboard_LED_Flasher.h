@@ -1,53 +1,69 @@
 //  ----------------------------------- On-board LED Handling
+//  OnBoard
 //    L     EEEE  DDD  
 //    L     E     D  D
-//    L     EE    D   D
+//    L     EEE   D   D
 //    L     E     D  D
 //    LLLL  EEEE  DDD    Flasher V02.2
+//
 //  -------------------------------------
-//
-//  Photon On-Board LED controller
-//  Bob (Dawgs)  bob@misternetwork.com   09-2015
-//  Last revision 5-3-2016
-//
-//LED_Red_Flash()  - red flash x3
-//LED_Red_FFlash()  - red fast flash x3
-//LED_Yellow_Flash() - yellow flash x3
-//LED_Yellow_FFlash() - yellow fast flash x3
-//LED_Green_Flash() - green flash x3
-//LED_Green_FFlash() - green fast flash x3
-//LED_Blue_Flash() - blue flash x3
-//LED_Blue_FFlash() - blue fast flash x3
-//
-//LED_reset()  - green/white flash x4
-//
-//LED_Rainbow_Flash()
-//
-//
+/*
+*  Particle On-Board LED controller
+*  Bob (Dawgs)  bob@misternetwork.com   09-2015
+*  Last revision 8-9-2016
+*
+*  LED_Red_Flash()  - red flash x3
+*  LED_Red_FFlash()  - red fast flash x3
+*
+*  LED_Green_Flash() - green flash x3
+*  LED_Green_FFlash() - green fast flash x3
+*
+*  LED_Blue_Flash() - blue flash x3
+*  LED_Blue_FFlash() - blue fast flash x3
+*
+*  LED_Yellow_Flash() - yellow flash x3
+*  LED_Yellow_FFlash() - yellow fast flash x3
+*
+*  LED_Cyan_Flash() - cyan flash x3
+*  LED_Cyan_FFlash() - cyan fast flash x3
+*
+*  LED_Magenta_Flash() - magenta flash x3
+*  LED_Magenta_FFlash() - magenta fast flash x3
+*
+*  LED_reset()  - green/white flash x4
+*
+*  LED_Rainbow_Flash()  - RGB flash x3
+*
+*/
 
 
 int lred;
 int lgreen;
 int lblue;
+int count
 
+//-----------------------  Red flash x3   -----------------------
 
-
-
-
-
-void LED_Red_Flash() {
-//                          Red flash x3   -----------------------
+void LED_Red_Flash(count) {
 
         RGB.control(true);   // take control of the RGB LED
 
         lred = 255;
         lgreen = 0;
         lblue = 0;
-
-        RGB.color(lred, lgreen, lblue);  // red
+        
+  if (count< 1 || count >8) count=3;
+  
+     do
+    {
+      RGB.color(lred, lgreen, lblue);  // red
           delay(1000);   // wait      
         RGB.color(0, 0, 0);  // off
-          delay(400);   // wait      
+          delay(400);   // wait
+          count=count-1; 
+    } while (count > 0);
+
+          
         RGB.color(lred, lgreen, lblue);  // red
           delay(800);   // wait      
         RGB.color(0, 0, 0);  // off
@@ -58,12 +74,12 @@ void LED_Red_Flash() {
           delay(400);   // wait      
 
         RGB.control(false);  // resume normal operation
- 
         }
          
          
+//-----------------------  Red Fast Flash x3   -----------------------
+
 void LED_Red_FFlash() {
-//                          Red Fast Flash x3   -----------------------
 
         RGB.control(true);   // take control of the RGB LED
         
@@ -88,65 +104,11 @@ void LED_Red_FFlash() {
  
         }
  
- 
-         
- 
-void LED_Yellow_Flash() {
-//                           Yellow flash x3   -----------------------
 
-        RGB.control(true);   // take control of the RGB LED
 
-        lred = 255;
-        lgreen = 255;
-        lblue = 0;
-
-        RGB.color(lred, lgreen, lblue); // yellow
-          delay(1000);   // wait one second     
-        RGB.color(0, 0, 0);  // off
-          delay(400);   // wait      
-        RGB.color(lred, lgreen, lblue); // yellow
-          delay(800);   // wait      
-        RGB.color(0, 0, 0);  // off
-          delay(400);   // wait      
-        RGB.color(lred, lgreen, lblue); // yellow
-          delay(800);   // wait      
-        RGB.color(0, 0, 0);  // off
-          delay(400);   // wait      
-        
-        RGB.control(false);  // resume normal operation
- 
-         }
-        
-        
-void LED_Yellow_FFlash() {
-//                           Yellow Fast Flash x3   -----------------------
-
-        RGB.control(true);   // take control of the RGB LED        
-
-        lred = 255;
-        lgreen = 255;
-        lblue = 0;
-
-        RGB.color(lred, lgreen, lblue); // yellow
-          delay(500);   // wait     
-        RGB.color(0, 0, 0);  // off
-          delay(200);   // wait      
-        RGB.color(lred, lgreen, lblue); // yellow
-          delay(500);   // wait      
-        RGB.color(0, 0, 0);  // off
-          delay(200);   // wait      
-        RGB.color(lred, lgreen, lblue); // yellow
-          delay(500);   // wait      
-        RGB.color(0, 0, 0);  // off
-          delay(200);   // wait      
-
-        RGB.control(false);  // resume normal operation
-   }
-        
-
+//-----------------------  Green flash x3   -----------------------
 
 void LED_Green_Flash() {
-//                           Green flash x3   -----------------------
 
         RGB.control(true);   // take control of the RGB LED
 
@@ -171,9 +133,9 @@ void LED_Green_Flash() {
  
          }
         
+//-----------------------  Green Fast Flash x3   -----------------------
         
 void LED_Green_FFlash() {
-//                           Green Fast Flash x3   -----------------------
 
         RGB.control(true);   // take control of the RGB LED        
 
@@ -199,8 +161,9 @@ void LED_Green_FFlash() {
 
 
 
+//-----------------------  Blue flash x3   -----------------------
+
 void LED_Blue_Flash() {
-//                           Blue flash x3   -----------------------
 
         RGB.control(true);   // take control of the RGB LED
 
@@ -225,9 +188,9 @@ void LED_Blue_Flash() {
  
          }
         
+//----------------------- Blue Fast Flash x3   -----------------------
         
 void LED_Blue_FFlash() {
-//                           Blue Fast Flash x3   -----------------------
 
         RGB.control(true);   // take control of the RGB LED        
 
@@ -251,9 +214,175 @@ void LED_Blue_FFlash() {
         RGB.control(false);  // resume normal operation
    }
 
+         
+//-----------------------  Yellow flash x3   -----------------------
+ 
+void LED_Yellow_Flash() {
+
+        RGB.control(true);   // take control of the RGB LED
+
+        lred = 255;
+        lgreen = 255;
+        lblue = 0;
+
+        RGB.color(lred, lgreen, lblue); // yellow
+          delay(1000);   // wait one second     
+        RGB.color(0, 0, 0);  // off
+          delay(400);   // wait      
+        RGB.color(lred, lgreen, lblue); // yellow
+          delay(800);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(400);   // wait      
+        RGB.color(lred, lgreen, lblue); // yellow
+          delay(800);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(400);   // wait      
+        
+        RGB.control(false);  // resume normal operation
+ 
+         }
+        
+//-----------------------  Yellow Fast Flash x3   -----------------------
+        
+void LED_Yellow_FFlash() {
+
+        RGB.control(true);   // take control of the RGB LED        
+
+        lred = 255;
+        lgreen = 255;
+        lblue = 0;
+
+        RGB.color(lred, lgreen, lblue); // yellow
+          delay(500);   // wait     
+        RGB.color(0, 0, 0);  // off
+          delay(200);   // wait      
+        RGB.color(lred, lgreen, lblue); // yellow
+          delay(500);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(200);   // wait      
+        RGB.color(lred, lgreen, lblue); // yellow
+          delay(500);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(200);   // wait      
+
+        RGB.control(false);  // resume normal operation
+   }
+        
+
+//-----------------------  Cyan flash x3   -----------------------
+ 
+void LED_Cyan_Flash() {
+
+        RGB.control(true);   // take control of the RGB LED
+
+        lred = 0;
+        lgreen = 255;
+        lblue = 255;
+
+        RGB.color(lred, lgreen, lblue); // Cyan
+          delay(1000);   // wait one second     
+        RGB.color(0, 0, 0);  // off
+          delay(400);   // wait      
+        RGB.color(lred, lgreen, lblue); // Cyan
+          delay(800);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(400);   // wait      
+        RGB.color(lred, lgreen, lblue); // Cyan
+          delay(800);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(400);   // wait      
+        
+        RGB.control(false);  // resume normal operation
+ 
+         }
+        
+//-----------------------  Cyan Fast Flash x3   -----------------------
+        
+void LED_Cyan_FFlash() {
+
+        RGB.control(true);   // take control of the RGB LED        
+
+        lred = 0;
+        lgreen = 255;
+        lblue = 255;
+
+        RGB.color(lred, lgreen, lblue); // Cyan
+          delay(500);   // wait     
+        RGB.color(0, 0, 0);  // off
+          delay(200);   // wait      
+        RGB.color(lred, lgreen, lblue); // Cyan
+          delay(500);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(200);   // wait      
+        RGB.color(lred, lgreen, lblue); // Cyan
+          delay(500);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(200);   // wait      
+
+        RGB.control(false);  // resume normal operation
+   }
+
+
+
+         
+//-----------------------  Magenta flash x3   -----------------------
+ 
+void LED_Magenta_Flash() {
+
+        RGB.control(true);   // take control of the RGB LED
+
+        lred = 255;
+        lgreen = 0;
+        lblue = 255;
+
+        RGB.color(lred, lgreen, lblue); // Magenta
+          delay(1000);   // wait one second     
+        RGB.color(0, 0, 0);  // off
+          delay(400);   // wait      
+        RGB.color(lred, lgreen, lblue); // Magenta
+          delay(800);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(400);   // wait      
+        RGB.color(lred, lgreen, lblue); // Magenta
+          delay(800);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(400);   // wait      
+        
+        RGB.control(false);  // resume normal operation
+ 
+         }
+        
+//-----------------------  Magenta Fast Flash x3   -----------------------
+        
+void LED_Magenta_FFlash() {
+
+        RGB.control(true);   // take control of the RGB LED        
+
+        lred = 255;
+        lgreen = 0;
+        lblue = 255;
+
+        RGB.color(lred, lgreen, lblue); // yellow
+          delay(500);   // wait     
+        RGB.color(0, 0, 0);  // off
+          delay(200);   // wait      
+        RGB.color(lred, lgreen, lblue); // yellow
+          delay(500);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(200);   // wait      
+        RGB.color(lred, lgreen, lblue); // yellow
+          delay(500);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(200);   // wait      
+
+        RGB.control(false);  // resume normal operation
+   }
+
+
+
+//----------------------- Rainbow Flash x3   -----------------------
 
 void LED_Rainbow_Flash() {
-//                           Rainbow Flash x3   -----------------------
 
         RGB.control(true);   // take control of the RGB LED        
 
@@ -299,8 +428,6 @@ void LED_Rainbow_Flash() {
 
         RGB.control(false);  // resume normal operation
    }
-
-
 
 
 
@@ -350,9 +477,10 @@ void LED_Control() {
 
 }
   
+
+// LED Reset  Green / White flash x4   -----------------------
      
      void LED_reset() {  
-// LED Reset  Green / White flash x4   -----------------------
 
         RGB.control(true);   // take control of the RGB LED
 
@@ -388,7 +516,6 @@ void LED_Control() {
           delay(400);   // wait
         RGB.color(0, 0, 0);  // off
           delay(400);   // wait
-
 
         RGB.control(false);  // resume normal operation
      }     
