@@ -12,27 +12,29 @@
 *  Bob (Dawgs)  bob@misternetwork.com   09-2015
 *  Last revision 8-9-2016
 *
-*  LED_Red_Flash(i)  - red flash x(i)
-*  LED_Red_FFlash(i)  - red fast flash x(i)
+*  The following are available:
 *
-*  LED_Green_Flash(i) - green flash x(i)
-*  LED_Green_FFlash(i) - green fast flash x(i)
-*
-*  LED_Blue_Flash(i) - blue flash x(i)
-*  LED_Blue_FFlash(i) - blue fast flash x(i)
-*
-*  LED_Yellow_Flash(i) - yellow flash x(i)
-*  LED_Yellow_FFlash(i) - yellow fast flash x(i)
-*
-*  LED_Cyan_Flash(i) - cyan flash x(i)
-*  LED_Cyan_FFlash(i) - cyan fast flash x(i)
-*
-*  LED_Magenta_Flash(i) - magenta flash x(i)
-*  LED_Magenta_FFlash(i) - magenta fast flash x(i)
-*
-*  LED_reset()  - green/white flash x4
-*
-*  LED_Rainbow_Flash(i)  - RGB flash x(i)
+*  LED_Red_Flash(count);  // red flash x(count)
+*  LED_Red_FFlash(count);  // red fast flash x(count)
+*  
+*  LED_Green_Flash(count); // green flash x(count)
+*  LED_Green_FFlash(count); // green fast flash x(count)
+*  
+*  LED_Blue_Flash(count); // blue flash x(count)
+*  LED_Blue_FFlash(count); // blue fast flash x(count)
+*  
+*  LED_Yellow_Flash(count); // yellow flash x(count)
+*  LED_Yellow_FFlash(count); // yellow fast flash x(count)
+*  
+*  LED_Cyan_Flash(count); // cyan flash x(count)
+*  LED_Cyan_FFlash(count); // cyan fast flash x(count)
+*  
+*  LED_Magenta_Flash(count); // magenta flash x(count)
+*  LED_Magenta_FFlash(count); // magenta fast flash x(count)
+*  
+*  LED_Rainbow_Flash(count); // RGB flash x(count)
+*  
+*  LED_reset();  // green/white flash x4
 *
 */
 
@@ -85,16 +87,12 @@ void LED_Red_FFlash(int count) {
         lblue = 0;
 
         LED_Blinker(count);
- 
         }
- 
-
 
 //-----------------------  Green flash x3   -----------------------
 
 void LED_Green_Flash(int count) {
 
-        
         lred = 0;
         lgreen = 255;
         lblue = 0;
@@ -112,8 +110,6 @@ void LED_Green_FFlash(int count) {
 
         LED_Blinker(count);
         }
-
-
 
 //-----------------------  Blue flash x3   -----------------------
 
@@ -137,7 +133,6 @@ void LED_Blue_FFlash(int count) {
         LED_Blinker(count);
    }
 
-         
 //-----------------------  Yellow flash x3   -----------------------
  
 void LED_Yellow_Flash(int count) {
@@ -159,7 +154,7 @@ void LED_Yellow_FFlash(int count) {
 
         LED_Blinker(count);
    }
-        
+    
 
 //-----------------------  Cyan flash x3   -----------------------
  
@@ -183,9 +178,6 @@ void LED_Cyan_FFlash(int count) {
         LED_Blinker(count);
    }
 
-
-
-         
 //-----------------------  Magenta flash x3   -----------------------
  
 void LED_Magenta_Flash(int count) {
@@ -207,8 +199,6 @@ void LED_Magenta_FFlash(int count) {
 
         LED_Blinker(count);
    }
-
-
 
 //----------------------- Rainbow Flash x3   -----------------------
 
@@ -235,10 +225,8 @@ void LED_Rainbow_Flash(int count) {
           countr++; 
     } while (count >= countr);
 
-
         RGB.control(false);  // resume normal operation
    }
-
 
 
 void LED_Control() {
