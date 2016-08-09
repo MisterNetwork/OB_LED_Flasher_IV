@@ -41,6 +41,8 @@ int lred;
 int lgreen;
 int lblue;
 int count;
+int countr;
+
 
 //-----------------------  Red flash x3   -----------------------
 
@@ -53,15 +55,15 @@ void LED_Red_Flash(count) {
         lblue = 0;
         
   if (count< 1 || count >8) count=3;
-  
+  countr = 0;
      do
     {
       RGB.color(lred, lgreen, lblue);  // red
           delay(1000);   // wait      
         RGB.color(0, 0, 0);  // off
           delay(400);   // wait
-          count=count-1; 
-    } while (count > 0);
+          countr++; 
+    } while (count > countr);
 
           
         RGB.color(lred, lgreen, lblue);  // red
