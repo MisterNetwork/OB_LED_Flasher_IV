@@ -40,7 +40,7 @@
 int lred;
 int lgreen;
 int lblue;
-int count
+int count;
 
 //-----------------------  Red flash x3   -----------------------
 
