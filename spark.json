@@ -1,8 +1,8 @@
 
 {
-  "name": "Onboard_LED_Flasher",
+  "name": "Onboard_LED_Flasher_II",
   "author": "BobDawgs",
   "license": "MIT",
-  "version": "2.0.3",
-  "description": "Onboard LED Flasher utility for Particle boards Core,Photon, and Electron"
+  "version": "3.0.1",
+  "description": "Onboard LED Flasher utility for Particle boards Core,Photon, and Electron with variable pulse count"
 }
