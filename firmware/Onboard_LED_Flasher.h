@@ -59,21 +59,21 @@ void LED_Red_Flash(int count) {
      do
     {
       RGB.color(lred, lgreen, lblue);  // red
-          delay(1000);   // wait      
+          delay(900);   // wait      
         RGB.color(0, 0, 0);  // off
           delay(400);   // wait
           countr++; 
-    } while (count > countr);
+    } while (count >= countr);
 
           
-        RGB.color(lred, lgreen, lblue);  // red
-          delay(800);   // wait      
-        RGB.color(0, 0, 0);  // off
-          delay(400);   // wait      
-        RGB.color(lred, lgreen, lblue);  // red
-          delay(800);   // wait      
-        RGB.color(0, 0, 0);  // off
-          delay(400);   // wait      
+//RGB.color(lred, lgreen, lblue);  // red
+//          delay(800);   // wait      
+//        RGB.color(0, 0, 0);  // off
+//          delay(400);   // wait      
+//        RGB.color(lred, lgreen, lblue);  // red
+//          delay(800);   // wait      
+//        RGB.color(0, 0, 0);  // off
+//          delay(400);   // wait      
 
         RGB.control(false);  // resume normal operation
         }
