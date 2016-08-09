@@ -4,7 +4,7 @@
 //    L     E     D  D
 //    L     EEE   D   D
 //    L     E     D  D
-//    LLLL  EEEE  DDD    Flasher V02.2
+//    LLLL  EEEE  DDD    Flasher V02.3
 //
 //  -------------------------------------
 /*
