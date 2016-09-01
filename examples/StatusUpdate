@@ -1,3 +1,17 @@
+
+#include "Onboard_LED_Flasher_II/Onboard_LED_Flasher_II.h"
+
+int ledEnable = 1;
+int LED_Red_Flag=0;
+int LED_Yellow_Flag=0;
+int LED_Green_Flag=0;
+int LED_Rainbow_Flag=0;
+int LED_Red_FFlag=0;
+int LED_Yellow_FFlag=0;
+int LED_Green_FFlag=0;
+
+
+
 //****** 1 Minute Timer ****************************************************************
 
   if(millis() - lastTimeOneMin > 60000) {
