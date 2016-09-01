@@ -6,7 +6,7 @@ The following calls are available:
 LED_Red_Flash(count);  // red flash x(count)  
 LED_Red_FFlash(count);  // red fast flash x(count)
 
-LED_Green_Flash(count); // green flash x(count) 
+LED_Green_Flash(count); // green flash x(count)
 LED_Green_FFlash(count); // green fast flash x(count)
 
 LED_Blue_Flash(count); // blue flash x(count)
