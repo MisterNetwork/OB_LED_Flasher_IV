@@ -25,6 +25,11 @@ LED_Rainbow_Flash(count); // RGB flash x(count)
 
 LED_reset();  // green/white flash x4
 
+NOTE:
+Flash count can be from 1 to 8.  Any other value or omitting count results in 3 flashes.
+
+Example:
+
     //  Status LED Update  
 
  if (ledEnable)  {
