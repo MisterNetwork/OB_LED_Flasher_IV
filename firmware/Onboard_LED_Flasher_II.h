@@ -26,11 +26,17 @@
 *  LED_Yellow_Flash(count); // yellow flash x(count)
 *  LED_Yellow_FFlash(count); // yellow fast flash x(count)
 *  
+*  LED_Orange_Flash(count); // orange flash x(count)
+*  LED_Orange_FFlash(count); // orange fast flash x(count)
+*  
 *  LED_Cyan_Flash(count); // cyan flash x(count)
 *  LED_Cyan_FFlash(count); // cyan fast flash x(count)
 *  
 *  LED_Magenta_Flash(count); // magenta flash x(count)
 *  LED_Magenta_FFlash(count); // magenta fast flash x(count)
+*  
+*  LED_White_Flash(count); // white flash x(count)
+*  LED_White_FFlash(count); // white fast flash x(count)
 *  
 *  LED_Rainbow_Flash(count); // RGB flash x(count)
 *  
@@ -44,7 +50,7 @@ int lgreen;
 int lblue;
 int count;
 int countr;
-
+int countr2;
 
 
 //---- Main Blink Control - all colors ----------
@@ -59,6 +65,24 @@ void LED_Blinker(int countb){
           delay(900);   // wait      
         RGB.color(0, 0, 0);  // off
           delay(400);   // wait
+          countr++; 
+    } while (countb >= countr);
+
+        RGB.control(false);  // resume normal operation
+        }
+
+//---- Fast Flash Blink Control - all colors ----------
+void LED_FF_Blinker(int countb){
+
+  RGB.control(true);   // take control of the RGB LED
+  if (countb< 1 || countb >8) countb=3;
+  countr = 1;
+     do
+    {
+      RGB.color(lred, lgreen, lblue);  // on
+          delay(500);   // wait      
+        RGB.color(0, 0, 0);  // off
+          delay(200);   // wait
           countr++; 
     } while (countb >= countr);
 
@@ -86,7 +110,7 @@ void LED_Red_FFlash(int count) {
         lgreen = 0;
         lblue = 0;
 
-        LED_Blinker(count);
+        LED_FF_Blinker(count);
         }
 
 //-----------------------  Green flash x3   -----------------------
@@ -108,7 +132,7 @@ void LED_Green_FFlash(int count) {
         lgreen = 255;
         lblue = 0;
 
-        LED_Blinker(count);
+        LED_FF_Blinker(count);
         }
 
 //-----------------------  Blue flash x3   -----------------------
@@ -130,7 +154,7 @@ void LED_Blue_FFlash(int count) {
         lgreen = 0;
         lblue = 255;
 
-        LED_Blinker(count);
+        LED_FF_Blinker(count);
    }
 
 //-----------------------  Yellow flash x3   -----------------------
@@ -152,9 +176,33 @@ void LED_Yellow_FFlash(int count) {
         lgreen = 255;
         lblue = 0;
 
-        LED_Blinker(count);
+        LED_FF_Blinker(count);
    }
     
+
+//-----------------------  Orange flash x3   -----------------------
+ 
+void LED_Orange_Flash(int count) {
+
+        lred = 255;
+        lgreen = 100;
+        lblue = 0;
+
+        LED_Blinker(count);
+         }
+        
+//-----------------------  Orange Fast Flash x3   -----------------------
+        
+void LED_Orange_FFlash(int count) {
+
+        lred = 255;
+        lgreen = 100;
+        lblue = 0;
+
+        LED_FF_Blinker(count);
+   }
+    
+
 
 //-----------------------  Cyan flash x3   -----------------------
  
@@ -175,7 +223,7 @@ void LED_Cyan_FFlash(int count) {
         lgreen = 255;
         lblue = 255;
         
-        LED_Blinker(count);
+        LED_FF_Blinker(count);
    }
 
 //-----------------------  Magenta flash x3   -----------------------
@@ -197,7 +245,29 @@ void LED_Magenta_FFlash(int count) {
         lgreen = 0;
         lblue = 255;
 
+        LED_FF_Blinker(count);
+   }
+
+//-----------------------  White flash x3   -----------------------
+ 
+void LED_White_Flash(int count) {
+
+        lred = 255;
+        lgreen = 255;
+        lblue = 255;
+
         LED_Blinker(count);
+         }
+        
+//-----------------------  White Fast Flash x3   -----------------------
+        
+void LED_White_FFlash(int count) {
+
+        lred = 255;
+        lgreen = 255;
+        lblue = 255;
+
+        LED_FF_Blinker(count);
    }
 
 //----------------------- Rainbow Flash x3   -----------------------
@@ -255,6 +325,9 @@ void LED_Control() {
 
         RGB.control(true);   // take control of the RGB LED
 
+          countr2 = 1;
+         do
+        {
         RGB.color(0, 255, 0);  // green
           delay(400);   // wait      
         RGB.color(0, 0, 0);  // off
@@ -263,30 +336,10 @@ void LED_Control() {
           delay(400);   // wait 
         RGB.color(0, 0, 0);  // off
           delay(400);   // wait 
-        RGB.color(0, 255, 0);  // green
-          delay(400);   // wait
-        RGB.color(0, 0, 0);  // off
-          delay(400);   // wait
-        RGB.color(180, 120, 255);  // white
-          delay(400);   // wait
-        RGB.color(0, 0, 0);  // off
-          delay(400);   // wait
-        RGB.color(0, 255, 0);  // green
-          delay(400);   // wait
-        RGB.color(0, 0, 0);  // off
-          delay(400);   // wait
-        RGB.color(180, 120, 255);  // white
-          delay(400);   // wait
-        RGB.color(0, 0, 0);  // off
-          delay(400);   // wait
-        RGB.color(0, 255, 0);  // green
-          delay(400);   // wait
-        RGB.color(0, 0, 0);  // off
-          delay(400);   // wait
-        RGB.color(180, 120, 255);  // white
-          delay(400);   // wait
-        RGB.color(0, 0, 0);  // off
-          delay(400);   // wait
+          countr2++; 
+        } while (4 >= countr2);
+
+
 
         RGB.control(false);  // resume normal operation
      }     
