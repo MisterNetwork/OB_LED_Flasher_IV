@@ -252,7 +252,7 @@ void LED_Magenta_FFlash(int count) {
  
 void LED_White_Flash(int count) {
 
-        lred = 255;
+        lred = 200;
         lgreen = 255;
         lblue = 255;
 
@@ -263,7 +263,7 @@ void LED_White_Flash(int count) {
         
 void LED_White_FFlash(int count) {
 
-        lred = 255;
+        lred = 200;
         lgreen = 255;
         lblue = 255;
 
