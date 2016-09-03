@@ -15,11 +15,17 @@ LED_Blue_FFlash(count); // blue fast flash x(count)
 LED_Yellow_Flash(count); // yellow flash x(count)  
 LED_Yellow_FFlash(count); // yellow fast flash x(count)
 
+LED_Orange_Flash(count); // orange flash x(count)  
+LED_Orange_FFlash(count); // orange fast flash x(count)
+
 LED_Cyan_Flash(count); // cyan flash x(count)  
 LED_Cyan_FFlash(count); // cyan fast flash x(count)
 
 LED_Magenta_Flash(count); // magenta flash x(count)  
 LED_Magenta_FFlash(count); // magenta fast flash x(count)
+
+LED_White_Flash(count); // white flash x(count)  
+LED_White_FFlash(count); // white fast flash x(count)
 
 LED_Rainbow_Flash(count); // RGB flash x(count) 
 
