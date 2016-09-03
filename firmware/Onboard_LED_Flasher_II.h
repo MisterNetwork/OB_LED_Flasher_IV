@@ -5,12 +5,12 @@
 //    L     EEE   D   D
 //    L     E     D  D  
 //    LLLL  EEEE  DDD   Flasher II
-//                               V3.0.1
+//                               V3.0.3
 //  -------------------------------------
 /*
 *  Particle On-Board LED controller
 *  Bob (Dawgs)  bob@misternetwork.com   09-2015
-*  Last revision 8-9-2016
+*  Last revision 9-3-2016
 *
 *  The following are available:
 *
