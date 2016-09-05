@@ -45,12 +45,10 @@ int lblue;
 int count;
 int countr;
 int countr2;
-int flashRateOn;
-int flashRateOff;
 
 
 //---- Main Blink Control - all colors ----------
-void LED_Blinker(int countb,flashRateOn,flashRateOff){
+void LED_Blinker(int countb, int flashRateOn, int flashRateOff){
 
   RGB.control(true);   // take control of the RGB LED
   if (countb< 1 || countb >8) countb=3;
