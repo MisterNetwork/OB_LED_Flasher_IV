@@ -45,6 +45,8 @@ int lblue;
 int count;
 int countr;
 int countr2;
+int fRateOn;
+int fRateOff;
 
 
 //---- Main Blink Control - all colors ----------
