@@ -1,9 +1,10 @@
-# Onboard_LED_Flasher_II
-Flashing utility for Particle's Core, Photon, and Electron's on-board LED with variable pulse count.
+# OB_LED_Flasher_III
+
+LED Flashing utility for Particle's Core, Photon, and Electron's on-board LED with variable pulse count.
 
 The following calls are available: 
 
-LED_Red_Flash(count);  // red flash x(count)  
+LED_Red_Flash(count,on,off);  // red flash x(count)  
 LED_Red_FFlash(count);  // red fast flash x(count)
 
 LED_Green_Flash(count); // green flash x(count)  
