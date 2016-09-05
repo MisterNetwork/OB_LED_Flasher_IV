@@ -1,16 +1,18 @@
 //  ----------------------------------- On-board LED Handling
+//
 //  OnBoard
+//
 //    L     EEEE  DDD  
 //    L     E     D  D
 //    L     EEE   D   D
 //    L     E     D  D  
-//    LLLL  EEEE  DDD   Flasher II
-//                               V3.0.4
+//    LLLL  EEEE  DDD   Flasher III
+//                               V4.0.1
 //  -------------------------------------
 /*
 *  Particle On-Board LED controller
 *  Bob (Dawgs)  bob@misternetwork.com   09-2015
-*  Last revision 9-3-2016
+*  Last revision 9-5-2016
 *
 *  The following are available:
 *
@@ -54,7 +56,7 @@ int countr2;
 
 
 //---- Main Blink Control - all colors ----------
-void LED_Blinker(int countb){
+void LED_Blinker(int countb,flashRateOn,flashRateOff){
 
   RGB.control(true);   // take control of the RGB LED
   if (countb< 1 || countb >8) countb=3;
@@ -62,215 +64,105 @@ void LED_Blinker(int countb){
      do
     {
       RGB.color(lred, lgreen, lblue);  // on
-          delay(900);   // wait      
+          delay(100*flashRateOn);   // wait      
         RGB.color(0, 0, 0);  // off
-          delay(400);   // wait
+          delay(100*flashRateOff);   // wait
           countr++; 
     } while (countb >= countr);
 
         RGB.control(false);  // resume normal operation
         }
 
-//---- Fast Flash Blink Control - all colors ----------
-void LED_FF_Blinker(int countb){
+//-----------------------  Red flash    -----------------------
 
-  RGB.control(true);   // take control of the RGB LED
-  if (countb< 1 || countb >8) countb=3;
-  countr = 1;
-     do
-    {
-      RGB.color(lred, lgreen, lblue);  // on
-          delay(500);   // wait      
-        RGB.color(0, 0, 0);  // off
-          delay(200);   // wait
-          countr++; 
-    } while (countb >= countr);
-
-        RGB.control(false);  // resume normal operation
-        }
-
-//-----------------------  Red flash x3   -----------------------
-
-void LED_Red_Flash(int count) {
+void LED_Red_Flash(int count,fRateOn,fRateOff) {
 
         lred = 255;
         lgreen = 0;
         lblue = 0;
         
-        LED_Blinker(count);
+        LED_Blinker(count,fRateOn,fRateOff);
         }
 
-         
-         
-//-----------------------  Red Fast Flash x3   -----------------------
 
-void LED_Red_FFlash(int count) {
+//-----------------------  Green flash  -----------------------
 
-        lred = 255;
-        lgreen = 0;
-        lblue = 0;
-
-        LED_FF_Blinker(count);
-        }
-
-//-----------------------  Green flash x3   -----------------------
-
-void LED_Green_Flash(int count) {
+void LED_Green_Flash(int count,fRateOn,fRateOff) {
 
         lred = 0;
         lgreen = 255;
         lblue = 0;
 
-        LED_Blinker(count);
+        LED_Blinker(count,fRateOn,fRateOff);
          }
         
-//-----------------------  Green Fast Flash x3   -----------------------
-        
-void LED_Green_FFlash(int count) {
+//-----------------------  Blue flash -----------------------
 
-        lred = 0;
-        lgreen = 255;
-        lblue = 0;
-
-        LED_FF_Blinker(count);
-        }
-
-//-----------------------  Blue flash x3   -----------------------
-
-void LED_Blue_Flash(int count) {
+void LED_Blue_Flash(int count,fRateOn,fRateOff) {
 
         lred = 0;
         lgreen = 0;
         lblue = 255;
 
-        LED_Blinker(count);
+        LED_Blinker(count,fRateOn,fRateOff);
 }
         
-//----------------------- Blue Fast Flash x3   -----------------------
-        
-void LED_Blue_FFlash(int count) {
-
-        lred = 0;
-        lgreen = 0;
-        lblue = 255;
-
-        LED_FF_Blinker(count);
-   }
-
-//-----------------------  Yellow flash x3   -----------------------
+//-----------------------  Yellow flash -----------------------
  
-void LED_Yellow_Flash(int count) {
+void LED_Yellow_Flash(int count,fRateOn,fRateOff) {
 
         lred = 255;
         lgreen = 255;
         lblue = 0;
 
-        LED_Blinker(count);
+        LED_Blinker(count,fRateOn,fRateOff);
          }
         
-//-----------------------  Yellow Fast Flash x3   -----------------------
-        
-void LED_Yellow_FFlash(int count) {
-
-        lred = 255;
-        lgreen = 255;
-        lblue = 0;
-
-        LED_FF_Blinker(count);
-   }
-    
-
-//-----------------------  Orange flash x3   -----------------------
+//-----------------------  Orange flash -----------------------
  
-void LED_Orange_Flash(int count) {
+void LED_Orange_Flash(int count,fRateOn,fRateOff) {
 
         lred = 255;
         lgreen = 100;
         lblue = 0;
 
-        LED_Blinker(count);
+        LED_Blinker(count,fRateOn,fRateOff);
          }
         
-//-----------------------  Orange Fast Flash x3   -----------------------
-        
-void LED_Orange_FFlash(int count) {
-
-        lred = 255;
-        lgreen = 100;
-        lblue = 0;
-
-        LED_FF_Blinker(count);
-   }
-    
-
-
-//-----------------------  Cyan flash x3   -----------------------
+//-----------------------  Cyan flash -----------------------
  
-void LED_Cyan_Flash(int count) {
+void LED_Cyan_Flash(int count,fRateOn,fRateOff) {
 
         lred = 0;
         lgreen = 255;
         lblue = 255;
 
-        LED_Blinker(count);
+        LED_Blinker(count,fRateOn,fRateOff);
  }
         
-//-----------------------  Cyan Fast Flash x3   -----------------------
-        
-void LED_Cyan_FFlash(int count) {
-
-        lred = 0;
-        lgreen = 255;
-        lblue = 255;
-        
-        LED_FF_Blinker(count);
-   }
-
-//-----------------------  Magenta flash x3   -----------------------
+//-----------------------  Magenta flash  -----------------------
  
-void LED_Magenta_Flash(int count) {
+void LED_Magenta_Flash(int count,fRateOn,fRateOff) {
 
         lred = 255;
         lgreen = 0;
         lblue = 255;
 
-        LED_Blinker(count);
+        LED_Blinker(count,fRateOn,fRateOff);
          }
         
-//-----------------------  Magenta Fast Flash x3   -----------------------
-        
-void LED_Magenta_FFlash(int count) {
-
-        lred = 255;
-        lgreen = 0;
-        lblue = 255;
-
-        LED_FF_Blinker(count);
-   }
-
-//-----------------------  White flash x3   -----------------------
+//-----------------------  White flash  -----------------------
  
-void LED_White_Flash(int count) {
+void LED_White_Flash(int count,fRateOn,fRateOff) {
 
         lred = 200;
         lgreen = 255;
         lblue = 255;
 
-        LED_Blinker(count);
+        LED_Blinker(count,fRateOn,fRateOff);
          }
         
-//-----------------------  White Fast Flash x3   -----------------------
-        
-void LED_White_FFlash(int count) {
-
-        lred = 200;
-        lgreen = 255;
-        lblue = 255;
-
-        LED_FF_Blinker(count);
-   }
-
-//----------------------- Rainbow Flash x3   -----------------------
+//----------------------- Rainbow Flash -----------------------
 
 void LED_Rainbow_Flash(int count) {
 
@@ -298,27 +190,6 @@ void LED_Rainbow_Flash(int count) {
         RGB.control(false);  // resume normal operation
    }
 
-
-void LED_Control() {
-
-//    if (overTempFlag) {
-//        LED_Red_Flash();
-//        LED_Red_FFlash();
-//        LED_Red_Flash();
-//        LED_Red_FFlash();
-//        }   
-//    
-//    if (highTempFlag) {
-//        LED_Yellow_Flash();
-//        LED_Yellow_FFlash();
-//        LED_Yellow_Flash();
-//        LED_Yellow_FFlash();
-//        }  
-
-}
-
-
-
 // LED Reset  Green / White flash x4   -----------------------
      
      void LED_reset() {  
@@ -338,8 +209,6 @@ void LED_Control() {
           delay(400);   // wait 
           countr2++; 
         } while (4 >= countr2);
-
-
 
         RGB.control(false);  // resume normal operation
      }     
