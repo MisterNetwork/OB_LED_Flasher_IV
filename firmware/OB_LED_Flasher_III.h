@@ -147,13 +147,28 @@ void LED_Magenta_Flash(int count, int fRateOn, int fRateOff) {
  
 void LED_White_Flash(int count, int fRateOn, int fRateOff) {
 
+// scales brightness of all three colors, 0-255.
+// the following sets the RGB LED brightness to 25%:
+// default is 96
+
+        RGB.control(true);
+        RGB.brightness(192);
+
         lred = 200;
         lgreen = 255;
         lblue = 255;
 
         LED_Blinker(count,fRateOn,fRateOff);
+
+        RGB.control(true);
+        RGB.brightness(96);
+        RGB.control(false);
+
+
          }
         
+
+
 //----------------------- Rainbow Flash -----------------------
 
 void LED_Rainbow_Flash(int count) {
