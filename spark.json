@@ -3,6 +3,6 @@
   "name": "OB_LED_Flasher_IV",
   "author": "BobDawgs",
   "license": "MIT",
-  "version": "4.0.1",
-  "description": "Onboard LED Flasher utility for Particle boards Core,Photon, and Electron with variable repeat count, Flash On and Off time control"
+  "version": "4.1.2",
+  "description": "Onboard LED Flasher utility for Particle boards Core,Photon, and Electron with variable repeat count, Flash On and Off time control, and brightness"
 }
