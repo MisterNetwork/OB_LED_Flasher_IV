@@ -54,6 +54,8 @@ int bright1;
 void LED_Blinker(int countb, int flashRateOn, int flashRateOff, int brightv){
 
   RGB.control(true);   // take control of the RGB LED
+
+  if (brightv< 1 || brightv >255) brightv=96;
   RGB.brightness(brightv);
 
   if (countb< 1 || countb >8) countb=3;
@@ -167,7 +169,8 @@ void LED_White_Flash(int count, int fRateOn, int fRateOff, int brightv) {
 
 void LED_Rainbow_Flash(int count, int brightv) {
 
-        RGB.control(true);   // take control of the RGB LED        
+        RGB.control(true);   // take control of the RGB LED  
+    if (brightv< 1 || brightv >255) brightv=96;
         RGB.brightness(brightv);
 
   if (count< 1 || count >8) count=3;
@@ -199,6 +202,7 @@ void LED_Rainbow_Flash(int count, int brightv) {
      void LED_reset(int count, int brightv) {  
 
         RGB.control(true);   // take control of the RGB LED
+    if (brightv< 1 || brightv >255) brightv=96;
         RGB.brightness(brightv);
 
   if (count< 1 || count >8) count=3;
