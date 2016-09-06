@@ -7,7 +7,7 @@
 //    L     EEE   D   D
 //    L     E     D  D  
 //    LLLL  EEEE  DDD   Flasher IV
-//                               V4.1.1
+//                               V4.1.2
 //  -------------------------------------
 /*
 *  Particle On-Board LED controller
