@@ -25,12 +25,15 @@ LED_Rainbow_Flash(count,brightness); // RGB flash x(count)
 LED_reset(count,brightness);  // green/white flash x(count)
 
 NOTE:  
-Flash count can be from 1 to 8. Any other value or omitting count results in 3 flashes.
-Flash onRate and offRate is a multiplier (n*100) milliseconds
-An onRate of 10 and an offRate of 5 yields a flash pattern of 1 second on and a half second off.
+Flash count can be from 1 to 8. Any other value results in 3 flashes.
+Flash onRate and offRate is a multiplier (n*100) milliseconds.
+Default onRate is 9 (900 milliseconds).
+Default offRate is 4 (400 milliseconds). 
 Brightness is system level from 1-255 (default is 96)
-Example:  
 
+An onRate of 10 and an offRate of 5 yields a flash pattern of 1 second on and a half second off.
+
+Example:  
 
     //  Status LED Update  
     if (ledEnable)  {
@@ -39,3 +42,14 @@ Example:
         if (LED_Green_Flag) LED_Green_Flash(3,9,4,96);
         if (LED_Rainbow_Flag) LED_Rainbow_Flash(3,192);
         }
+
+Arguments are optional and may be omitted from right to left
+
+Examples below all mean the same:
+
+    LED_Red_Flash(3,9,4,96);
+    LED_Red_Flash(3,9,4);
+    LED_Red_Flash(3,9);
+    LED_Red_Flash(3);
+    LED_Red_Flash();
+         
