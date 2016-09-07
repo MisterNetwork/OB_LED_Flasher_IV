@@ -26,7 +26,7 @@ LED_reset(count,brightness);  // green/white flash x(count)
 
 NOTE:  
 Flash count can be from 1 to 8. Any other value or omitting count results in 3 flashes.
-Flash onRate and offRate is a multiplier (n*100) miliseconds
+Flash onRate and offRate is a multiplier (n*100) milliseconds
 An onRate of 10 and an offRate of 5 yields a flash pattern of 1 second on and a half second off.
 Brightness is system level from 1-255 (default is 96)
 Example:  
