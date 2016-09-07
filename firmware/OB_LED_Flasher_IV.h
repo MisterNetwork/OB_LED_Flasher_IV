@@ -38,6 +38,13 @@
 *  
 *  LED_reset(count,brightness);  // green/white flash x(count,brightness)
 *
+*  args are optional from right to left (default values shown)
+*  Examples:
+*   LED_RedFlash(3,9,4,96);
+*   LED_RedFlash(3,9,4);
+*   LED_RedFlash(3,9);
+*   LED_RedFlash(3);
+*
 */
 
 
