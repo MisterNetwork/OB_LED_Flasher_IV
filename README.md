@@ -1,4 +1,4 @@
-# OB_LED_Flasher_IV
+# OB_LED_Flasher_IV_300c
 
 LED Flashing utility for Particle's Core, Photon, and Electron's on-board LED with variable pulse count.
 
