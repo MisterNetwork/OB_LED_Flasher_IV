@@ -1,6 +1,6 @@
 # OB_LED_Flasher_IV
 
-LED Flashing utility for Particle's Core, Photon, and Electron's on-board LED with variable pulse count.
+LED Flashing utility for Particle's Core, Photon, and Electron's on-board LED with variable pulse count, on and off rates (n*100) miliseconds, and brightness level.
 
 The following calls are available: 
 
